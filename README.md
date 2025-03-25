@@ -1,0 +1,1 @@
+Compiled pdfs [here](https://github.com/danielFHcode/liniar-algebra-1a-2025/releases/latest).
