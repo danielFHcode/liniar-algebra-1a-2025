@@ -11,6 +11,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Check out font project source repository
+        uses: actions/checkout@v4
+      - name: Install the latest stable Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+      - name: Install fontc and compile fonts
+        uses: googlefonts/fontc-action@main
+        with:
+          source-path: fonts/David CLM/DavidCLM-Medium.otf
+
       - name: Typst
         uses: lvignoli/typst-action@main
         with:
