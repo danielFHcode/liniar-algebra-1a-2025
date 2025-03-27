@@ -236,16 +236,6 @@ $W_1 union W_2$
 תת מרחב ווקטורי אמ"מ
 $W_1 subset.eq W_2 or W_2 subset.eq W_1$.
 
-= הגדה - חיבור תתי מרחבים ווקטוריים
-
-בהנתן שני תתי מרחבים ווקטוריים
-$A,B subset.eq V$,
-נגדיר:
-
-$
-  A + B := { a + b | a in A, b in B }
-$
-
 = צירופים לינאריים
 
 יהי
@@ -368,12 +358,77 @@ ${u_1, ..., u_n} subset.eq V$
 
 == דוגמא
 
++ $
+    V = RR^n \
+    arrow.b.double \
+    V = Span{e_1, ..., e_n} \
+    e_1 := (1, 0, ..., 0) \
+    e_2 := (0, 1, 0, ..., 0) \
+    dots.v \
+    e_n := (0, ..., 0, 1)
+  $
+
++ $M_(m times n)(FF)$
+  נאצר סופית ע"י
+  $m dot n$
+  מטריצות, למשל
+  ${E_(i j)}_(i=1, j=1)^(m,n)$
+  כאשר
+  $E_(i j)$
+  היא מטריצה שיש לה
+  $1$
+  במקום ה-$i j$
+  ו-$0$
+  בכל שאר המקומות.
+
+
+= הגדה - חיבור תתי מרחבים ווקטוריים
+
+בהנתן שני תתי מרחבים ווקטוריים
+$A,B subset.eq V$,
+נגדיר:
+
 $
-  V = RR^n \
-  arrow.b.double \
-  V = Span{e_1, ..., e_n} \
-  e_1 := (1, 0, ..., 0) \
-  e_2 := (0, 1, 0, ..., 0) \
-  dots.v \
-  e_n := (0, ..., 0, 1)
+  A + B := { a + b | a in A, b in B }
 $
+
+== טענות
+
++ $W_1 + W_2$
+  הוא תת מרחב ווקטורי של
+  $V$
++ $W_1 + W_2$
+  הוא תת המרחב המינימלי המכיל את
+  $W_1$
+  ואת
+  $W_2$.
+
+=== הוכחה
+
++ $0 in W_1, W_2$,
+  לכן
+  $0 = 0 + 0 in W_1 + W_2$.
+
+  יהיו
+  $u, v in W_1 + W_2$,
+  אז קיימים
+  $u_1, v_1 in W_1$
+  ו-$u_2,v_2 in W_2$
+  כך ש-$u = u_1 + u_2, v = v_1 + v_2$.
+  לכן:
+
+  $
+    lambda dot u + mu dot v
+    = underbrace(lambda dot u_1 + lambda dot u_2, in W_1) + underbrace(mu dot v_1 + mu dot v_2, in W_2)
+    in W_1 + W_2
+  $
+
++ $
+    W_1 subset.eq W_1 + W_2 \
+    W_2 subset.eq W_1 + W_2 \
+    arrow.b.double \
+    W_1 union W_2 subset.eq W_1 + W_2
+  $
+  ממינימליות נקבל
+  $W_1 + W_2 supset.eq Span(W_1 union W_2)$.
+  צ"ל: $Span(W_1 union W_2) = W_1 union W_2$.
