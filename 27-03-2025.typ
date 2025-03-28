@@ -3,10 +3,10 @@
 #show: article.with(lang: "he")
 
 #show math.equation.where(block: true): set block(breakable: true)
-#set text(font: "David CLM")
+#set text(font: ("David CLM", "David", "David Libre"))
 
 #let ds = $. space$
-#let mtext = text.with(font: "David CLM")
+#let mtext = text.with(font: ("David CLM", "David", "David Lihre"))
 #let Span = math.op[Span]
 
 #maketitle(

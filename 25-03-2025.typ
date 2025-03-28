@@ -2,7 +2,7 @@
 
 #show: article.with(lang: "he")
 
-#set text(font: "David CLM")
+#set text(font: ("David CLM", "David", "David Libre"))
 
 #maketitle(
   title: "אלגברה לינארית 1א",
