@@ -35,6 +35,4 @@ jobs:
           name: "${{ github.ref_name }} — ${{ env.DATE }}"
           body: >
             Auto release API ${{env.RELEASE_TAG}} by @ci
-
-            Typst github action by @lvignoli
           files: "*.pdf"
