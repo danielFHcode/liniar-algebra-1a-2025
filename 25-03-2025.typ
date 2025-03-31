@@ -2,12 +2,12 @@
 
 #show: article.with(lang: "he")
 
-#set text(font: ("David CLM", "David", "David Libre"))
+#set text(font: "David CLM")
 
 #maketitle(
   title: "אלגברה לינארית 1א",
   authors: ("דניאל פ.ח.",),
-  date: datetime.today().display("[day].[month].[year]"),
+  date: datetime(day: 25, month: 3, year: 2025).display("[day].[month].[year]"),
 )
 
 = הצגה קנונית של מטריצה

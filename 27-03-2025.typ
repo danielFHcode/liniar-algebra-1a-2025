@@ -3,16 +3,16 @@
 #show: article.with(lang: "he")
 
 #show math.equation.where(block: true): set block(breakable: true)
-#set text(font: ("David CLM", "David", "David Libre"))
+#set text(font: "David CLM")
 
 #let ds = $. space$
-#let mtext = text.with(font: ("David CLM", "David", "David Lihre"))
+#let mtext = text.with(font: "David CLM")
 #let Span = math.op[Span]
 
 #maketitle(
   title: "אלגברה לינארית 1א",
   authors: ("דניאל פ.ח.",),
-  date: datetime.today().display("[day].[month].[year]"),
+  date: datetime(day: 27, month: 3, year: 2025).display("[day].[month].[year]"),
 )
 
 = מרחבים ווקטוריים
