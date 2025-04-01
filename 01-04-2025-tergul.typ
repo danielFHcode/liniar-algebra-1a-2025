@@ -12,9 +12,9 @@
 #let amat = math.mat.with(augment: -1)
 
 #maketitle(
-  title: "אלגברה לינארית 1א",
+  title: "אלגברה לינארית 1א - תרגול",
   authors: ("דניאל פ.ח.",),
-  date: datetime(day: 27, month: 3, year: 2025).display("[day].[month].[year]"),
+  date: datetime(day: 1, month: 4, year: 2025).display("[day].[month].[year]"),
 )
 
 = מרחבים ווקטוריים
