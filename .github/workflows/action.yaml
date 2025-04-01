@@ -18,6 +18,7 @@ jobs:
       - run: typst compile 25-03-2025.typ --font-path fonts
       - run: typst compile 27-03-2025.typ --font-path fonts
       - run: typst compile 01-04-2025-tergul.typ --font-path fonts
+      - run: typst compile 01-04-2025.typ --font-path fonts
 
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
