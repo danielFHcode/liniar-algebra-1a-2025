@@ -284,7 +284,7 @@ $1 times n$
 $n times 1$.
 
 $
-  A = (a_1, ..., a_n) \
+  A = mat(a_1, ..., a_n) \
   B = mat(b_1; dots.v; b_n)
 $
 
@@ -319,15 +319,309 @@ $
   ) = b_1 mat(a_(1 1); dots.v; a_(1 m)) + ... + b_n mat(a_(n 1); dots.v; a_(n m))
 $
 
-// == דוגמא
+=== דוגמא
 
-// $
-//   mat(
-//     1, 2, 3;
-//     4, 5, 6;
-//   ) dot mat(
-//     2;
-//     0;
-//     -1
-//   )
-// $
+$
+  mat(
+    1, 2, 3;
+    4, 5, 6;
+  ) dot mat(
+    2;
+    0;
+    -1
+  ) = mat(
+    1 dot 2 + 2 dot 0 + 2 dot (-1);
+    4 dot 2 + 5 dot 0 + 6 dot (-1);
+  ) = mat(
+    -1;
+    2;
+  ) = 2 dot mat(1;4) + 0 dot mat(2;5) + (-1) dot mat(3;6)
+$
+
+== כפל מטריצה במטריצה
+
+באופן כללי, תהי
+$A in M_(m times n)(FF)$
+ו-$B in M_(n times q)(FF)$,
+נגדיר את מכפלתן להיות מטריצה בגודל
+$m times q$:
+
+$
+  [A dot B]_(i j)
+  := mat(a_(i 1), ..., a_(i n)) dot mat(b_(1 j); dots.v; b_(n j))
+  = sum_(k=1)^n b_(i k) b_(k j)
+  tab
+  #stack(
+    spacing: .5em,
+    $1 <= i <= m$,
+    $1 <= j <= q$
+  )
+$
+
+=== דוגמא
+
+$
+  mat(1,2,3; 1,0,1) mat(1,2; 0,1; 1,0) = mat(4,4; 2,2)
+$
+
+=== הערה
+
+תהי מערכת משוואות לינארית:
+
+$
+  cases(
+    a_(1 1) x_1 + ... + a_(1 n) x_n = b_1,
+    dots.v,
+    a_(m 1) x_1 + ... + a_(m n) x_n = b_m,
+  )
+$
+
+נסמן:
+
+$
+  A = mat(
+    a_(1 1), ..., a_(1 n);
+    dots.v, dots.down, dots.v;
+    a_(m 1), ..., a_(m n);
+  ), x = mat(
+    x_1;
+    dots.v;
+    x_n
+  ), b = mat(
+    b_1;
+    dots.v;
+    b_n;
+  )
+$
+
+אז ניתן לרשום את המערכת בצורה:
+
+$
+  A dot x = b
+$
+
+== הערה
+
+באופן כללי
+$A dot B != B dot A$.
+בדוגמא האחרונה
+$A\B in M_(2 times 2)(RR), B\A in M_(3 times 3)(FF)$.
+
+גם אם
+$A,B in M_n(FF)$
+לא בהכרח
+$A\B = B\A$.
+לדוגמא:
+
+$
+  A = mat(1,2; 3,4) \
+  B = mat(1,0; 0,0) \
+  A dot B = mat(1,3; 0,0) \
+  B dot A = mat(1,2; 0,0)
+$
+
+== תכונות של כפל
+
++ $
+    (A dot B) dot C = A dot (B dot C)
+  $
+
++ $
+    A dot (B + C) = A dot B + A dot C
+  $
+
++ $
+    (A dot B)^t = B^t dot A^t
+  $
+
+=== הוכחה
+
++ בהנתן
+  $A in M_(m times n)(FF), B in M_(n times p), C in M_(p times q)(FF)$:
+
+  $
+    [(A dot B) dot C]_(i j)
+    &= sum_(k = 1)^p [A dot B]_(i k) dot [C]_(k j) \
+    &= sum_(k = 1)^p (sum_(r = 1)^n [A]_(i r) dot [B]_(r k)) dot [C]_(k j) \
+    &= sum_(k = 1)^p sum_(r = 1)^n [A]_(i r) dot [B]_(r k) dot [C]_(k j) \
+    &= sum_(r = 1)^n sum_(k = 1)^p [A]_(i r) dot [B]_(r k) dot [C]_(k j) \
+    &= sum_(r = 1)^n [A]_(i r) dot (sum_(k = 1)^p dot [B]_(r k) dot [C]_(k j)) \
+    &= sum_(r = 1)^n [A]_(i r) dot [B dot C]_(k j) \
+    &= [A dot (B dot C)]_(k j)
+  $
++ תרגיל לקורא
++ תרגיל לקורא
+
+== הערה
+
+ייתכן ש-$A\B = 0$
+אבל לא
+$A != 0, B != 0$,
+לדוגמא:
+
+$
+  mat(1,1; 1,1) dot mat(1,1; -1,-1) = 0
+$
+
+גם יכול לקרות עבור כפל מטריצה בעצמה:
+
+$
+  mat(0,1;0,0)^2 = 0
+$
+
+== איבר ניטרלי
+
+תהי
+$A in M_(n)(FF)$,
+אז:
+
+$
+  A dot I_n = I_n dot A = A
+$
+
+כלומר
+$I_n$
+איבר ניטרלי לכפל.
+
+=== הוכחה
+
+$
+  [A dot I_n] = sum_(k=1)^n [A]_(i k) dot [I_n]_(k j) = [A]_(i j)
+$
+
+== טענה
+
+$I_n$
+איבר ניטרלי *יחיד*.
+
+=== הוכחה
+
+יהי
+$I'_n$
+איבר נירטלי, אז:
+
+$
+  I'_n = I'_n dot I_n = I_n
+$
+
+=== הערה
+
+ייתכן שעבור
+$A$
+נתונה קיימת
+$B != I_n$
+כך ש-
+
+$
+  A dot B = A
+$
+
+==== דוגמא
+
+$
+  mat(1,0; 2,0) dot mat(1,0; 2,0) = mat(1,0; 2,0)
+$
+
+== הגדרה
+
+$A,B in M_n(FF)$
+נקראות מתחלםות אם
+$A dot B = B dot A$.
+
+== הגדרה
+
+מטריצה סקלרית היא מטריצה מהצורה:
+
+$
+  mat(
+    lambda, ..., 0;
+    dots.v, dots.down, dots.v;
+    0, ..., lambda;
+  ) = lambda dot I
+$
+
+_הערה:_
+אם המימד ברור מאילב ניתן לכתוב
+$I$
+במקום
+$I_n$.
+
+== טענה
+
+מטריצה סקלרית מתחלפת עם כל מטריצה.
+
+$
+  (lambda dot I) dot A = A dot (lambda dot I) = lambda dot A
+$
+
+== טענה
+
+אם
+$C in M_n(FF)$
+מתחלפת עם כל מטריצה
+$A in M_n(FF)$
+אז
+$C$
+סקלרית.
+
+=== הוכחה
+
+נגדיר:
+
+$
+  E^(i,j) := mat(
+    0, ..., 0, 0, 0, ..., 0;
+    dots.v, dots.down, dots.v, dots.v, dots.v, dots.up, dots.v;
+    0, ..., 0, 0, 0, ..., 0;
+    0, ..., 0, 1, 0, ..., 0;
+    0, ..., 0, 0, 0, ..., 0;
+    dots.v, dots.up, dots.v, dots.v, dots.v, dots.down, dots.v;
+    0, ..., 0, 0, 0, ..., 0;
+  )
+$
+
+כאשר ה-$1$
+במקום ה-$i j$.
+(כלומר $[E]_(i j) = 1 <=> i = j$ ו-$E_(i j) = 0 <=> i != j$)
+
+אז:
+
+$
+  C dot E^(i,j) = E^(i,j) dot C \
+  mat(
+    0, ..., 0, C_(1 j), 0, ..., 0;
+    dots.v, dots.down, dots.v, dots.v, dots.v, dots.up, dots.v;
+    0, ..., 0, C_(n j), 0, ..., 0;
+  ) = mat(
+    0, ..., 0;
+    dots.v, dots.down, dots.v;
+    0, ..., 0;
+    C_(i 1), ..., C_(i n);
+    0, ..., 0;
+    dots.v, dots.up, dots.v;
+    0, ..., 0;
+  )
+$
+
+לכן בהכרח לכל
+$i != j$
+מתקיים
+$[C]_(i j) = [C]_(j i) = 0$,
+אז
+$C$
+מהצורה:
+
+$
+  C = mat(
+    C_(1 1), ..., 0;
+    dots.v, dots.down, dots.v;
+    0, ..., C_(n n);
+  )
+$
+
+כדי להראות ש-$C_(1 1) = C_(i i)$
+נסתכל על:
+
+$
+  C dot E^(1,i) = E^(1,1) dot C
+$
