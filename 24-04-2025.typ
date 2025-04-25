@@ -311,7 +311,7 @@ $
 + $rank(A B) <= min(rank(A), rank(B))$
 + $rank(A) <= rank(A) + rank(B)$
 
-== הוכחה
+=== הוכחה
 
 7. כל עמודה ב-$A B$
   היא (צירוף לינארי של העמודות של
@@ -398,8 +398,22 @@ $
   $
     rank(mat(I_n | I_n) C mat(I_m; -; I_m)) <= min(m,n,rank(A) + rank(B)) \
     mat(
-      tilde(A), |, 0;
+      A, |, 0;
       -, +, -;
-      0, |, tilde(B);
-     )
+      0, |, B;
+    ) mat(I_n; -; I_n) = mat(
+      A I_n + 0 I_n;
+      #line(length: 4.5em, stroke: (thickness: .05em));;
+      0 I_n + B I_n;
+    ) = mat(A; -; B) \
+    C = mat(I_n, |, I_n) mat(A; -; B) = I_n A + I_n B = A + B
   $
+
+=== מסקנה
+
+תהיינה
+$A, in M_(m times n)(FF), B in M_(n times n)(FF)$,
+אם
+$B$
+הפיכה אז
+$rank(A B) = rank(A)$
