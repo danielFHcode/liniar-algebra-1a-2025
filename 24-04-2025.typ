@@ -416,4 +416,23 @@ $A, in M_(m times n)(FF), B in M_(n times n)(FF)$,
 אם
 $B$
 הפיכה אז
-$rank(A B) = rank(A)$
+$rank(A B) = rank(A)$.
+
+==== הוכחה
+
+לפי תכונות של דרגה:
+
+$
+  rank(A B) <= rank(A)
+$
+
+מצד שני:
+
+$
+  rank(A) = rank(A B B^(-1)) = rank((A B) B^(-1)) <= rank(A B)
+$
+
+$
+  arrow.b.double \
+  rank(A) = rank(A B)
+$
