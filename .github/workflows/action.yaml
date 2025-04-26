@@ -22,10 +22,11 @@ jobs:
       - run: typst compile 03-04-2025.typ --font-path fonts
       # - run: typst compile 03-04-2025-tergul.typ --font-path fonts
       - run: typst compile 22-04-2025-tergul.typ --font-path fonts
-      - run: typst compile 24-04-2025.typ --font-path fonts
+      # - run: typst compile 24-04-2025.typ --font-path fonts
 
       - run: typst compile ex2.typ --font-path fonts
-      - run: typst compile ex3.typ --font-path fonts
+      - run: typst compile ex2.typ --font-path fonts
+      - run: typst compile ex4.typ --font-path fonts
 
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
