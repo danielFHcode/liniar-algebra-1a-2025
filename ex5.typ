@@ -94,3 +94,195 @@ $
   arrow.b.double \
   mat(2;3;0;3) = 2mat(1;0;3;0) + 3mat(0;1;-2;1)
 $
+
+== סעיף ג
+
+$
+  sin(x + a) = underbrace(cos a, mtext("קבוע")) dot sin x + underbrace(sin a, mtext("קבוע")) dot cos x in Span{sin x, cos x}
+$
+
+= שאלה 2
+
+== סעיף א
+
+יהי
+$mat(x;y;z) in RR^3$
+
+$
+  amat(
+    1, 2, 4, 5, x;
+    2, 3, 5, 6, y;
+    3, 4, 6, 7, z;
+  )
+  -->^(R_2 => R_2 - 2R_1 \ R_3 => R_3 - 3R_1)
+  amat(
+    1, 2, 4, 5, x;
+    0, -1, -3, -4, y-2x;
+    0, -2, -6, -8, z-3x;
+  ) \
+  -->^(R_2 => -R_2)
+  amat(
+    1, 2, 4, 5, x;
+    0, 1, 3, 4, 2x-y;
+    0, -2, -6, -8, z-3x;
+  )
+  -->^(R_1 => R_1 - 2R_2 \ R_3 => R_3 + 2R_2)
+  amat(
+    1, 0, -2, -3, 2y-3x;
+    0, 1, 3, 4, 2x-y;
+    0, 0, 0, 0, z-3x;
+  ) \
+  arrow.b.double \
+$
+$
+  z - 3x &= 0 \
+  z &= 3x \
+$
+$
+  arrow.b.double \
+  Span(S) subset.eq { mat(3z;y;z) | y,z in RR } subset.neq RR^3
+$
+
+לכן
+$S$
+לא פורשת את
+$RR^3$.
+
+== סעיף ב
+
+יהי
+$mat(x;y;z) in RR^3$.
+
+$
+  amat(
+    1, 2, 2, x;
+    2, 3, 2, y;
+    3, 4, 3, z;
+  )
+  -->^(R_2 => R_2 - 2R_1 \ R_3 => R_3 - 3R_1)
+  amat(
+    1, 2, 2, x;
+    0, -1, -2, y-2x;
+    0, -2, -3, z-3x;
+  )
+  -->^(R_2 => -R_2)
+  amat(
+    1, 2, 2, x;
+    0, 1, 2, 2x-y;
+    0, -2, -3, z-3x;
+  ) \
+  -->^(R_1 => R_1 - 2R_2 \ R_3 + 2R_2)
+  amat(
+    1, 0, -2, 2y-3x;
+    0, 1, 2, 2x-y;
+    0, 0, 1, z+x-y;
+  )
+  -->^(R_1 => R_1 + 2R_3 \ R_2 => R_2 - 2R_3)
+  amat(
+    1, 0, 0, 2z-x;
+    0, 1, 0, y-2z;
+    0, 0, 1, z+x-y;
+  ) \
+  arrow.b.double \
+  mat(x; y; z) = (2z-x)mat(1;2;3) + (y-2z)mat(2;3;4) + (z+x-y)mat(2;2;3) in Span(S)
+$
+
+סה"כ
+$Span(S) subset.eq RR^3 subset.eq Span(S)$
+$arrow.l.double$
+$Span(S) = RR^3$.
+
+= שאלה 3
+
+יהיו
+$n_1 / m_1, ..., n_k / m_k in QQ$
+כך ש-
+
+$
+  n_1 / m_1 ln(p_1) + ... + n_k / m_k ln(p_k) &= 0 \
+  ln(p_1^(n_1/m_1)) + ... + ln(p_k^(n_k/m_k)) &= 0 \
+  ln(p_1^(n_1/m_1) dot ... dot   p_k^(n_k/m_k)) &= 0 \
+  p_1^(n_1 / m_1) dot ... dot p_k^(n_k / m_k) &= 1 \
+  p_1^(n_1 dot m_2 dot ... dot m_k) dot ... dot p_k^(n_k dot m_1 dot ... dot m_(k-1)) &= 1^(m_1 dot ... dot m_k) \
+  p_1^(n_1 dot m_2 dot ... dot m_k) dot ... dot p_k^(n_k dot m_1 dot ... dot m_(k-1)) &= 1 \
+$
+
+מהמשפט היסודי של האריטמטיקה קיים ייצוג יחיד לכל מספר כמכפלה של ראשוניים מועלים בחזקה. ניתן לייצג את אחד בתור
+$p_1^0 dot ... dot p_k^0$
+ולכן:
+
+$
+  n_1 dot m_2 dot ... dot m_k = ... n_k dot m_1 dot ... dot m_(k-1) = 0 \
+  arrow.b.double \
+  cases(
+    n_1 dot m_2 dot ... dot m_k &= 0,
+    dots.v,
+    n_k dot m_1 dot ... dot m_(k-1) &= 0,
+  )
+$
+
+$m_1, ..., m_n$
+בהכרח גדולים מאפס כי הם מכנים, לכן נאכל לחלק בהם:
+
+$
+  cases(
+      n_1 &= 0,
+      dots.v,
+      n_k &= 0,
+    )
+$
+
+לכן
+$n_1 = ... = n_k$,
+ולכן
+$p_1, ..., p_k$
+בת"ל.
+
+= שאלה 4
+
+נניח בשלילה כי קיימת קבוצה כזו
+$S = {f_1, ..., f_k}$.
+
+$|RR| = |RR^k|$
+לכן קיים זיווג
+$A: RR -> RR^k$.
+בנוסף נסמן לכל
+$v in RR^k$
+את האיבר ה-$i$
+של
+$v$
+בתור
+$v_i$.
+נגדיר פונקצייה:
+
+$
+  F : RR -> RR \
+  F(x) = 1 + sum_(i=1)^k A(x)_i dot f_(i)(x)
+$
+
+$F in V$
+לכן קיימים
+$a_1, ..., a_n in RR$
+כך ש-$F(x) = sum_(i=1)^k a_i dot f_(i)(x)$.
+$A$
+זיווג ובפרט על לכן קיים
+$y in RR$
+כך ש-$A(x) = (a_1, ..., a_n)$,
+אז:
+
+$
+  F(x) &= 1 + sum_(i = 1)^k A(x)_i dot f_(i)(x) \
+  sum_(i=1)^k a_i dot f_(i)(x) &= 1 + sum_(i = 1)^k (a_1, ..., a_k)_i dot f_(i)(x) \
+  sum_(i=1)^k a_i dot f_(i)(x) &= 1 + sum_(i = 1)^k (a_1, ..., a_k)_i dot f_(i)(x) \
+  cancel(sum_(i=1)^k a_i dot f_(i)(x)) &= 1 + cancel(sum_(i=1)^k a_i dot f_(i)(x)) \
+  0 &= 1 \
+$
+$
+  arrow.b.double \
+  mtext("סתירה!")
+$
+
+לכן בהכרח
+$Span{f_1, ..., f_k} != V$
+ובבפרט
+$Span{f_1, ..., f_k} subset.neq V$.
