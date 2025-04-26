@@ -159,3 +159,177 @@ $RR^3$:
     A dot (1 + 1) A dot 0 = emptyset = A triangle A = A dot 1 triangle A dot 1 \
     A dot (0 + 0) = A dot 0 = emptyset = A dot 0 triangle A dot 0 \
   $
++ $
+    1 dot A = A
+  $
+
+= שאלה 3
+
+== סעיף א
+
+יהיו
+$[a], [b] in U subset.eq ZZ_p$,
+אז:
+
+$
+  [a] dot [b] = [a dot b] = \[underbrace(a + ... + a, b "times")\] = underbrace([a] + ... + [a], b "times") in U
+$
+
+בנוסף, בהנתן
+$[a] in U$,
+מכך ש-$ZZ_p$
+שדה קיים
+$[b] in ZZ_p$
+כך ש-
+
+$
+  0 = [a] dot [b] = [a dot b] = \[underbrace(a + ... + a, b "times")\] = underbrace([a] + ... + [a], b "times") in U
+$
+
+לכן סה"כ
+$U$
+תת"מ של
+$ZZ_p$.
+
+== סעיף ב
+
+$QQ^2 subset.eq RR^2$,
+ו-$QQ^2$
+מקיים סגירות לחיבור אבל לא סגירות לכפל בסקלר של
+$RR$
+ולכן
+$QQ^2$
+לא תת"מ של
+$RR^2$.
+
+= שאלה 4
+
++ $
+    0 = 0_(i j) = 0_(j i) = 0 \
+    0 = 0_(i j) = -0_(j i) = -0 \
+  $
+
++ $
+    A_(i j) = A_(j i) and B_(i j) = B_(j i)
+    => (A + B)_(i j) = A_(i j) + B_(i j) = A_(j i) + B_(j i) = (A + B)_(j i) \
+    A_(i j) = -A_(j i) and B_(i j) = -B_(j i)
+    => (A + B)_(i j) = A_(i j) + B_(i j) = -A_(j i) - B_(j i) = -(A + B)_(j i) \
+  $
+
++ $
+    A_(i j) = A_(j i) => (lambda dot A)_(i j) = lambda dot A_(i j) = lambda dot A_(j i) = (lambda dot A)_(j i) \
+    A_(i j) = -A_(j i) => (lambda dot A)_(i j) = lambda dot A_(i j) = lambda dot (-A_(j i)) = - lambda dot A_(j i) = -(lambda dot A)_(j i) \
+  $
+
+עבור
+$A in "Sym"_(n)(FF) inter "ASym"_(n)(FF)$:
+
+$
+  +cases(
+    A_(i j) = A_(j i),
+    A_(i j) = -A_(j i),
+  ) \
+  2A_(i j) = 0 \
+  A_(i j) = 0 \
+$
+
+לכן סה"כ
+$"Sym"_(n)(FF) inter "ASym"_(n)(FF) = {0}$.
+
+= שאלה 5
+
+== סעיף א
+
++ $
+    0 in QQ
+  $
++ $
+    a / b + n / m = (a n + b m) / (b m) in QQ
+  $
++ $
+    a / b dot n / m = (a dot n) / (b dot m) in QQ
+  $
+
+== סעיף ב
+
+לא כיוון שאין לו סגירות לכפל, לדוגמא
+$sqrt(2) in RR, 1/2 in QQ, sqrt(2)/2 in.not QQ$.
+
+= שאלה 6
+
+== סעיף א
+
+$
+  S inter T subset.eq S => Span(S inter T) subset.eq Span(S) \
+  S inter T subset.eq T => Span(S inter T) subset.eq Span(T) \
+  arrow.b.double \
+  Span(S inter T) subset.eq Span(S) inter Span(T)
+$
+
+== סעיף ב
+
+נפריח עם דוגמא נגדית:
+
+$
+  Span({mat(1;0)} inter {mat(2;0)}) = Span(emptyset) supset.eq.not Span{mat(1;0)} = Span{mat(1;0)} inter Span{mat(2;0)}
+$
+
+== סעיף ג
+
+נפריח עם דוגמא נגדית:
+
+$
+  Span{mat(1;0),mat(0;1)} != Span{mat(1;0)} union Span{mat(0;1)}
+$
+
+= שאלה 7
+
+== סעיף א
+
+נסמן:
+
+$
+  S = {a_1, ..., a_n} \
+  T = {a_1, ..., a_n, b_1, ..., b_m}
+$
+
+יהי
+$lambda_1 a_1 + ... + lambda_n a_n in Span(S)$,
+אז
+$lambda_1 a_1 + ... + lambda_n a_n$
+$=$
+$lambda_1 a_1 + ... + lambda_n a_n + 0 dot b_1 + ... + 0 dot b_1$
+$in.rev$
+$Span(T)$.
+
+== סעיף ב
+
+/ $arrow.l.double$\::
+  נניח בה"כ
+  $S subset.eq.not Span(T)$,
+  אז קיים
+  $s in S$
+  כך ש-$s in.not Span(T)$.
+  $s in S$
+  לכן
+  $s in Span(S)$,
+  לכן
+  $Span(S) != Span(T)$
+/ $arrow.r.double$\::
+  נניח כי
+  $Span(S) != Span(T)$,
+  ונניח בה"כ כי קיים
+  $s in Span(S)$
+  כך ש-$s in.not Span(T)$.
+  נסמן
+  $S = {s_1, ..., s_n}$,
+  אז קיימים
+  $lambda_1, ..., lambda_n$
+  כך ש-$s = lambda_1 s_1 + ... + lambda_n s_n$.
+  בהכרח קיים
+  $i$
+  כך ש-$s_i in.not Span(T)$
+  כיוון שאחרת
+  $s in Span(T)$
+  מסגירות לכפל וחיבור וזו סתירה. לכן
+  $S subset.eq.not Span(T)$.
