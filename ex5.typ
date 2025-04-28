@@ -605,15 +605,40 @@ $
 
 == סעיף א
 
-// נניח בשלילה כי קיימים
-// $lambda_1, lambda_2, lambda_3 in RR$
-// כך ש-$x = lambda_1 cos(x) + lambda_2 sin(x) + lambda_3 e^x$,
-// אז
-// $x in Omega(lambda_1 cos(x) + lambda_2 sin(x) + lambda_3 e^x) = Omega(lambda_3 e^x) = Omega(e^x)$
-// $arrow.l.double$
-// סתירה!
+$
+  lambda_1 cos x + lambda_2 sin x + lambda_3 e^x = x \
+  arrow.b.double
+$
+$
+  lambda_1 cos 0 + lambda_2 sin 0 + lambda_3 e^0 &= 0 \
+  lambda_1 + lambda_3 &= 0 \
+  lambda_1 &= -lambda_3 \
+$
+$
+  lambda_1 cos pi / 2 + lambda_2 sin pi / 2 + lambda_3 e^(pi / 2) &= pi / 2 \
+  lambda_2 + lambda_3 e^(pi / 2) &= pi / 2 \
+  lambda_2 &= pi / 2 - lambda_3 e^(pi / 2) \
+$
+$
+  arrow.b.double \
+  -lambda_3 cos x + (pi / 2 - lambda_3 e^(pi / 2)) sin x + lambda_3 e^x = x \
+  arrow.b.double \
+$
+$
+  -lambda_3 cos pi + (pi / 2 - lambda_3 e^(pi / 2)) sin pi + lambda_3 e^pi &= pi \
+  -lambda_3 dot (-1) + (pi / 2 - lambda_3 e^(pi / 2)) dot 0 + lambda_3 e^pi &= pi \
+  lambda_3 + lambda_3 e^pi &= pi \
+  lambda_3 &= pi / (1 + e^pi) \
+$
+$
+  arrow.b.double \
+  -pi / (1 + e^pi) cos x + (pi / 2 - (pi e^(pi / 2)) / (1 + e^pi)) sin x + pi / (1 + e^pi) e^x = x
+$
 
-??
+אבל
+$-pi / (1 + e^pi) cos x + (pi / 2 - (pi e^(pi / 2)) / (1 + e^pi)) sin x + pi / (1 + e^pi) e^x != x$
+$arrow.l.double$
+סתירה! לכן הקבוצה בת"ל.
 
 == סעיף ב
 
