@@ -254,3 +254,26 @@ $
   sum_(k=0)^n a_k (overline(z_0))^k &= 0 \
   p(overline(z_0)) &= 0 \
 $
+
+= שאלה 7
+
+נשים לב כי:
+
+$
+  a_n = d dot a_(n-1) = d dot d dot a_(n-2) = ... = underbrace(d dot ... dot d, n "times") dot a_0 = d^n dot a_0
+$
+
+כעט נוכיח באינדוקציה:
+
+/ בסיס\::
+  $
+    sum_(i=0)^0 a_i = a_0 = a_0 dot (d - 1) / (d - 1) = a_0 dot (d^(0+1) - 1) / (d + 1)
+  $
+/ צעד\::
+  $
+    sum_(i=0)^(n+1) a_i
+    =& a_(n+1) + sum_(i=0)^n a_i \
+    =& d^(n+1) dot a_0 + a_0 dot (d^(n+1)-1) / (d - 1) \
+    =& a_0 dot (cancel(d^(n+1)) - 1 + d^(n+2) cancel(- d^(n+1))) / (d - 1) \
+    =& a_0 dot (d^(n+2) - 1) / (d - 1) \
+  $
