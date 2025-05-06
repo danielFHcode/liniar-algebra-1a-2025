@@ -25,6 +25,7 @@ jobs:
       - run: typst compile 24-04-2025.typ --font-path fonts
       # - run: typst compile 24-04-2025-tergul.typ --font-path fonts
       - run: typst compile 29-04-2025.typ --font-path fonts
+      - run: typst compile 06-05-2025-tergul.typ --font-path fonts
 
       - run: typst compile ex1.typ --font-path fonts
       - run: typst compile ex2.typ --font-path fonts
