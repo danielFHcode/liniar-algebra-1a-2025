@@ -10,6 +10,7 @@
 #let mtext = text.with(font: "David CLM")
 #let Span = math.op[Span]
 #let rank = math.op[rank]
+#let Id = math.op[Id]
 #let amat = math.mat.with(augment: -1)
 #let tab = $space space space space$
 
@@ -196,3 +197,139 @@ $
 $
 
 מיידית נובע מכך ש-$T(0) = 0$.
+
+$
+  V supset.eq ker T := { v in V | T(v) = 0 } \
+  U supset.eq Im T := { u in U | exists v in V ds T(v) = u }
+$
+
+== משפט
+
+לכל
+$T$
+העתקה לינארית
+$Im T, ker T$
+תת"מ.
+
+== דוגמאות
+
++ העתקת הזהות על
+  $V$
+  המוגדרת לפי:
+
+  $
+    Id(v) = v
+  $
+
+  אז:
+
+  $
+    Im Id = V \
+    ker Id = {0}
+  $
+
++ העתקת האפס:
+
+  $
+    0(v) = 0 \
+    Im 0 = {0} \
+    ker 0 = V
+  $
+
++ כפל בסקלר:
+
+  $
+    T_underbrace(lambda, != 0) (v) = lambda dot v \
+    ker T_lambda = {0} \
+    Im T_lambda = V
+  $
+
++ הטלה לקואורדינטה ה-$i$:
+
+  $
+    Pi_i mat(x_1; dots.v; x_n) = x_i \
+    ker Pi_i = { mat(v_1; dots.v; v_(i-1); 0; v_(i+1); dots.v; v_n) | v_1, ..., v_(i-1), v_(i+1), ..., v_n in FF } \
+    Im Pi_i = FF
+  $
+
++ כפל משמאל ב-$A in M_(m times n)(FF)$:
+
+  $
+    T_(A)(v) = A v \
+    ker T_A = N(A) \
+    Im T_A = C(A)
+  $
+
+== תרגיל
+
+קבעו האם
+$T: V -> U$
+העתקה לינארית ואם כן מצאו בסיסים ל-$ker T, Im T$.
+
++ העתקת הנגזרת:
+  $
+    T : RR_(<= n)[x] arrow.turn.l \
+    T(p) = p' \
+  $
+  זוהי כן העתקה לינארית:
+  $
+    ker p = { mtext("פולינומים קבועים") } \
+    Im T = RR_(<= n - 1)[x]
+  $
+
++ העתקת ההצבה:
+  $
+    T_c : RR_(<= n)[x] -> RR \
+    T_(c)(p) = p(c) \
+    arrow.b.double \
+    T(a p_1 + b p_2) = (a p_1 + b p_2)(c) = a p_1(c) + b p_2(c) = a T(p_1) + b T(p_2) \
+    ker T = { mtext("הוא השורש שלו") mtext(C"פולינום ש-") } = Span{x-c, (x-c)x, (x-c)x^2, ..., (x-c)x^(n-1)} \
+    Im T = RR
+  $
+
++ $T_B : M_(n)(RR) -> M_(n times k)(RR)$
+  המוגדרת לפי:
+
+  $
+    T_B (A) = (A+I)B
+  $
+
+  כאשר
+  $B in M_(n times k)(RR) \\ {0}$.
+
+  היא לא לינארית:
+
+  $
+    T(a A_1 + b A_2) = (a A_1 + b A_2 + I)B = a A_1 B + b A_2 B + B \
+    a T(A_1) + b T(A_2) = (a A_1 + I)B + (b A_2 + I)B = a A_1 B + b A_2 B + 2B
+  $
+
++ $T: M_2(RR) -> RR$
+  המוגדרת לפי
+  $A(A) = v^tack.b A v$
+  כאשר
+  $v = mat(1; 1)$.
+
+  מתקיים:
+
+  $
+    T mat(a, b; c, d)
+    = mat(1, 1) mat(a, b; c, d) mat(1; 1)
+    = mat(a+c, b+d) mat(1; 1)
+    = a + b + c + d
+  $
+
+  וזו העתקה לינארית.
+  ניתן גם לראות זאת מכך ש-
+
+  $
+    T(a A_1 + b A_2)
+    = v^tack.b (a A_1 + b A_2) v
+    = a v^tack.b A_1 v + b v^tack.b A_2 v
+  $
+
+  תרגיל לבית - להוכיח שזה בסיס ל-$ker$:
+
+  $
+    { mat(-1, 1; 0, 0), mat(0, 0; 1, -1), mat(0, 1; 0, -1) }
+  $
