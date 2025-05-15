@@ -22,7 +22,7 @@
 #maketitle(
   title: "אלגברה לינארית 1א",
   authors: ("דניאל פ.ח.",),
-  date: datetime(day: 8, month: 5, year: 2025).display("[day].[month].[year]"),
+  date: datetime(day: 13, month: 5, year: 2025).display("[day].[month].[year]"),
 )
 
 = מטריצה מייצגת
