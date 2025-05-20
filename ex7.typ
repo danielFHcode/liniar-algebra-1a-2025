@@ -383,3 +383,49 @@ $
   = dim Span{v_i_k}
   = 1
 $
+
+== סעיף ב
+
+נניח בשלילה כי קיימות מטריצות כאלו
+$A_1, ..., A_k$,
+אז לכל
+$1 <= i <= k$
+נסמן
+$A_i = mat(
+  |, , |;
+  v'_(i 1), ..., v'_(i n);
+  |, , |;
+)$,
+ואז כיוון ש-$dim Col A_i = rank A_i = 1$,
+ו-${v'_(i 1), ..., v'_(i n)} subset.eq Col A_i$,
+בהכרח קיימים
+$v_i in FF^m, lambda_(i 1), ..., lambda_(i n) in FF$
+כך ש-
+
+$
+  A_i = mat(
+    |, , |;
+    lambda_(i 1) v_i, ..., lambda_(i n) v_i;
+    |, , |;
+  )
+$
+
+אז:
+
+$
+  rank A
+  &= dim Col A \
+  &= dim Col(A_1 + ... + A_k) \
+  &= dim Col mat(
+    |, , |;
+    lambda_(1 1) v_1 + ... + lambda_(k 1) v_k, ..., lambda_(1 n) v_1 + ... + lambda_(k n) v_k;
+    |, , |;
+  ) \
+  &= dim Span{ lambda_(1 1) v_1 + ... + lambda_(k 1) v_k, space ..., space lambda_(1 n) v_1 + ... + lambda_(k n) v_k } \
+  &<= dim Span{v_1, ..., v_k} \
+  &<= k \
+  &< r
+$
+
+שזו סתירה כי
+$rank A = r$.
