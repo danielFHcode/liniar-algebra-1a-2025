@@ -15,23 +15,23 @@ jobs:
       - run: sudo apt install snapd
       - run: sudo snap install typst
 
-      - run: typst compile 25-03-2025.typ --font-path fonts
-      - run: typst compile 27-03-2025.typ --font-path fonts
-      - run: typst compile 01-04-2025-tergul.typ --font-path fonts
-      - run: typst compile 01-04-2025.typ --font-path fonts
-      - run: typst compile 03-04-2025.typ --font-path fonts
-      # - run: typst compile 03-04-2025-tergul.typ --font-path fonts
-      - run: typst compile 22-04-2025-tergul.typ --font-path fonts
-      - run: typst compile 24-04-2025.typ --font-path fonts
-      # - run: typst compile 24-04-2025-tergul.typ --font-path fonts
-      - run: typst compile 29-04-2025.typ --font-path fonts
-      - run: typst compile 06-05-2025-tergul.typ --font-path fonts
-      - run: typst compile 06-05-2025.typ --font-path fonts
-      - run: typst compile 08-05-2025.typ --font-path fonts
-      # - run: typst compile 08-05-2025-tergul.typ --font-path fonts
-      # - run: typst compile 13-05-2025-tergul.typ --font-path fonts
-      - run: typst compile 13-05-2025.typ --font-path fonts
-      - run: typst compile 15-05-2025.typ --font-path fonts
+      - run: typst compile 2025-03-25.typ --font-path fonts
+      - run: typst compile 2025-03-27.typ --font-path fonts
+      - run: typst compile 2025-04-01-tergul.typ --font-path fonts
+      - run: typst compile 2025-04-01.typ --font-path fonts
+      - run: typst compile 2025-04-03.typ --font-path fonts
+      # - run: typst compile 2025-04-03-tergul.typ --font-path fonts
+      - run: typst compile 2025-04-22-tergul.typ --font-path fonts
+      - run: typst compile 2025-04-24.typ --font-path fonts
+      # - run: typst compile 2025-04-24-tergul.typ --font-path fonts
+      - run: typst compile 2025-04-29.typ --font-path fonts
+      - run: typst compile 2025-05-06-tergul.typ --font-path fonts
+      - run: typst compile 2025-05-06.typ --font-path fonts
+      - run: typst compile 2025-05-08.typ --font-path fonts
+      # - run: typst compile 2025-05-08-tergul.typ --font-path fonts
+      # - run: typst compile 2025-05-13-tergul.typ --font-path fonts
+      - run: typst compile 2025-05-13.typ --font-path fonts
+      - run: typst compile 2025-05-15.typ --font-path fonts
 
       - run: typst compile ex1.typ --font-path fonts
       - run: typst compile ex2.typ --font-path fonts
