@@ -39,6 +39,7 @@ jobs:
       - run: typst compile ex4.typ --font-path fonts
       - run: typst compile ex5.typ --font-path fonts
       - run: typst compile ex6.typ --font-path fonts
+      - run: typst compile ex7.typ --font-path fonts
 
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
