@@ -300,7 +300,7 @@ $
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 5em,
-  image("15-05-2025-imgs/a.excalidraw.svg"), image("15-05-2025-imgs/b.excalidraw.svg"),
+  image("2025-05-15-imgs/a.excalidraw.svg"), image("2025-05-15-imgs/b.excalidraw.svg"),
 )
 
 כיצד נחשב אותם? האם יש הכללות של המושגים האלו ל-$RR^n$,
