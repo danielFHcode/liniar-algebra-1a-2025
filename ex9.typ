@@ -337,9 +337,29 @@
       $
   
   + / Left Side\:: Let $B_1,B_2$ and $C_1,C_2$ be bases of $V$ and $U$ accordingly such that $[S]^(B_2)_C_2 = [T]^(B_1)_C_1$, then $dim Col [S]^(B_2)_C_2 = dim Col [T]^(B_1)_C_1$, so using the helper proof from question (1) it follows that $dim Im(T) = dim Im(S)$.
-    / Right Side\:: Assume $dim Im S = dim Im T$, then there exists an isomorphism $H : Im S -> Im T$, meaning for every $v in V$ there exists a $u in V$ such that $H(S(v)) = T(u)$
+    / Right Side\::
+    
+      Assume $dim Im S = dim Im T$, then there exists an injective linier transformation $H: V -> V$ such that $S compose H = T$. Let $B$ and $C$ be bases of $V$ and $U$ accordingly, then $[H]^B_C$ is invertible so as is proven by induction in part (c) of this question that means there exists a base $B'$ of $V$ such that $[H]^B_C = [Id]^C'_C$, then:
 
-      #text(fill: red)[I DONT KNOW WHY THE HELL DO YOU HAVE 3 EXAMS QUESTIONS PER QUESTIONS??]
+        $
+          [S compose H]^B_C &= [T]^B_C \
+          [S]^B_C dot [H]^B_C &= [T]^B_C \
+          [S]^B_C dot [Id]^B'_B &= [T]^B_C \
+          [S]^B'_C &= [T]^B_C \
+        $
+
+        Let $(S(s_1),...,S(s_n))$ and $(T(t_1),...,T(t_n))$ be bases for $Im S$ and $Im T$ accordingly, then we can create a linier transformation $G: Im S -> Im T$ such that $G(S(s_1)) = T(t_1), ..., G(S(s_n)) = T(s_n)$. Then because $T(t_1),...,T(t_n) in Im G$ that means $Im G = Im T$, and because $dim Im S = dim Im G$ that means $G$ is an isomorphism.
+        
+        $(S(s_1),...,S(s_n))$ and $(T(t_1),...,T(t_n))$ are linearly independent which means $(s_1,...,s_n)$ and $(t_1, ..., t_n)$ must also be linearly independent, so we can expand both of them into bases $(s_1, ..., s_m)$ and $(t_1,...,t_m)$ for $V$, now we can construct a linier transformation $H$ such that $H(t_1) = s_1, ..., H(t_m) = s_m$. Then because $s_1,...,s_n in Im H$ that means $Im H = V$, and because $dim V = dim V$ that means $H$ is an isomorphism.
+        
+        Overall $G(S(H(t_1))) = G(S(s_1)) = T(t_1), ..., G(S(H(t_n))) = G(S(s_n)) = T(t_n)$ which means $G compose S compose H = T$. From part (c) of this question because $G$ and $H$ are isomorphisms there exist bases $B_1, B_2$ and $C_1,C_2$ for $V$ and $U$ respectively such that $[H]^(B_1)_B_2 = I$ and $[G]^(C_1)_(C_2) = I$, then:
+
+        $
+          [G compose S compose H]^(B_1)_(C_1) &= [T]^(B_1)_(C_1) \
+          [G]^(C_1)_(C_2) [S]^(B_2)_(C_2) [H]^(B_1)_B_2 &= [T]^(B_1)_(C_1) \
+          I [S]^(B_2)_(C_2) I &= [T]^(B_1)_(C_1) \
+          [S]^(B_2)_(C_2) &= [T]^(B_1)_(C_1) \
+        $
 
   + / Left Side\:: Assume there exist bases $B$ and $C$ for $V$ and $U$ accordingly such that $[T]^B_C = I$, then $[T]^B_C$ is invertible, which means $T$ is invertible, so $Ker T = {0}$. Because $[T]^B_C = I$, it means $[T]^B_C$ is square which means $dim V = dim U$, then:
 
